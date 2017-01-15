@@ -132,6 +132,11 @@ extension VenueTableViewController : MKMapViewDelegate
 {
     func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation)
     {
+        var region = MKCoordinateRegion()
+        region.center = userLocation.coordinate
+        region.span.latitudeDelta = 0.001
+        region.span.longitudeDelta = 0.001
         
+        mapView.setRegion(region, animated: true)
     }
 }
