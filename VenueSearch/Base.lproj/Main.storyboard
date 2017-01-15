@@ -18,9 +18,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="F5s-ng-aD4">
+                            <rect key="frame" x="0.0" y="64" width="375" height="350"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="fnq-kL-Imm">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="350"/>
+                                    <subviews>
+                                        <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lSG-Zd-Qlq">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="350"/>
+                                        </mapView>
+                                    </subviews>
+                                </stackView>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="fnq-kL-Imm" secondAttribute="trailing" id="DCp-Ji-fnZ"/>
+                                <constraint firstItem="fnq-kL-Imm" firstAttribute="top" secondItem="F5s-ng-aD4" secondAttribute="top" id="EI4-wa-uGF"/>
+                                <constraint firstAttribute="bottom" secondItem="fnq-kL-Imm" secondAttribute="bottom" id="QTS-Cp-i0I"/>
+                                <constraint firstItem="fnq-kL-Imm" firstAttribute="leading" secondItem="F5s-ng-aD4" secondAttribute="leading" id="s11-wx-WO2"/>
+                            </constraints>
+                        </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="VenueCell" rowHeight="71" id="Gta-Ml-oGh" customClass="VenueTableViewCell" customModule="VenueSearch" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="71"/>
+                                <rect key="frame" x="0.0" y="378" width="375" height="71"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Gta-Ml-oGh" id="aK8-MX-z0r">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
@@ -141,6 +162,10 @@
                             <action selector="fetchVenues" destination="fnq-Il-1ZL" eventType="valueChanged" id="cgT-2b-7XZ"/>
                         </connections>
                     </refreshControl>
+                    <connections>
+                        <outlet property="headerStackView" destination="fnq-kL-Imm" id="3us-UF-GuA"/>
+                        <outlet property="mapView" destination="lSG-Zd-Qlq" id="bUl-Hf-aAj"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LTa-cB-Oa5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -8,8 +8,14 @@
 
 import UIKit
 import SafariServices
+import MapKit
 
 class VenueTableViewController: UITableViewController {
+    
+    @IBOutlet weak var headerStackView: UIStackView!
+    
+    
+    @IBOutlet weak var mapView: MKMapView!
     
     var venues = [Venue]() {
         didSet{
@@ -43,6 +49,8 @@ class VenueTableViewController: UITableViewController {
         locationManager.didGetLocation = { coordinate in
             self.coordinate = coordinate
         }
+        
+        mapView.delegate = self
 
     }
     
@@ -116,5 +124,14 @@ extension VenueTableViewController
             self.present(alertController, animated: true, completion: nil)
 
         }
+    }
+}
+
+// MAP Delegate
+extension VenueTableViewController : MKMapViewDelegate
+{
+    func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation)
+    {
+        
     }
 }
