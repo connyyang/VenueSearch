@@ -12,6 +12,16 @@
 		AEB03E971E2057B6000058F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AEB03E951E2057B6000058F1 /* Main.storyboard */; };
 		AEB03E991E2057B6000058F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AEB03E981E2057B6000058F1 /* Assets.xcassets */; };
 		AEB03E9C1E2057B6000058F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AEB03E9A1E2057B6000058F1 /* LaunchScreen.storyboard */; };
+		AEB03EA41E2057D5000058F1 /* NetworkProcessing.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB03EA31E2057D5000058F1 /* NetworkProcessing.swift */; };
+		AEB03EA61E205850000058F1 /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB03EA51E205850000058F1 /* Coordinate.swift */; };
+		AEB03EA81E2058DB000058F1 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB03EA71E2058DB000058F1 /* Location.swift */; };
+		AEB03EAA1E205B95000058F1 /* Venue.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB03EA91E205B95000058F1 /* Venue.swift */; };
+		AEB03EAC1E2208AD000058F1 /* FourSquareEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB03EAB1E2208AD000058F1 /* FourSquareEndPoint.swift */; };
+		AEB03EAE1E2320FB000058F1 /* APIResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB03EAD1E2320FB000058F1 /* APIResult.swift */; };
+		AEB03EB01E232149000058F1 /* FourSquareClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB03EAF1E232149000058F1 /* FourSquareClient.swift */; };
+		AEB03EB41E25EEDC000058F1 /* VenueTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB03EB31E25EEDC000058F1 /* VenueTableViewController.swift */; };
+		AEB03EB61E26F866000058F1 /* VenueTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB03EB51E26F866000058F1 /* VenueTableViewCell.swift */; };
+		AEB03EB91E2AFA1F000058F1 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB03EB81E2AFA1F000058F1 /* LocationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +32,16 @@
 		AEB03E981E2057B6000058F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AEB03E9B1E2057B6000058F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AEB03E9D1E2057B6000058F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AEB03EA31E2057D5000058F1 /* NetworkProcessing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkProcessing.swift; sourceTree = "<group>"; };
+		AEB03EA51E205850000058F1 /* Coordinate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
+		AEB03EA71E2058DB000058F1 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		AEB03EA91E205B95000058F1 /* Venue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Venue.swift; sourceTree = "<group>"; };
+		AEB03EAB1E2208AD000058F1 /* FourSquareEndPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FourSquareEndPoint.swift; sourceTree = "<group>"; };
+		AEB03EAD1E2320FB000058F1 /* APIResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIResult.swift; sourceTree = "<group>"; };
+		AEB03EAF1E232149000058F1 /* FourSquareClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FourSquareClient.swift; sourceTree = "<group>"; };
+		AEB03EB31E25EEDC000058F1 /* VenueTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenueTableViewController.swift; sourceTree = "<group>"; };
+		AEB03EB51E26F866000058F1 /* VenueTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenueTableViewCell.swift; sourceTree = "<group>"; };
+		AEB03EB81E2AFA1F000058F1 /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +74,48 @@
 		AEB03E901E2057B6000058F1 /* VenueSearch */ = {
 			isa = PBXGroup;
 			children = (
+				AEB03EB71E26F9B8000058F1 /* View */,
+				AEB03EB21E25EEB5000058F1 /* Controller */,
+				AEB03EB11E25EE96000058F1 /* Model */,
 				AEB03E911E2057B6000058F1 /* AppDelegate.swift */,
-				AEB03E931E2057B6000058F1 /* ViewController.swift */,
 				AEB03E951E2057B6000058F1 /* Main.storyboard */,
 				AEB03E981E2057B6000058F1 /* Assets.xcassets */,
 				AEB03E9A1E2057B6000058F1 /* LaunchScreen.storyboard */,
 				AEB03E9D1E2057B6000058F1 /* Info.plist */,
 			);
 			path = VenueSearch;
+			sourceTree = "<group>";
+		};
+		AEB03EB11E25EE96000058F1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AEB03EAD1E2320FB000058F1 /* APIResult.swift */,
+				AEB03EAF1E232149000058F1 /* FourSquareClient.swift */,
+				AEB03EA51E205850000058F1 /* Coordinate.swift */,
+				AEB03EA71E2058DB000058F1 /* Location.swift */,
+				AEB03EA91E205B95000058F1 /* Venue.swift */,
+				AEB03EAB1E2208AD000058F1 /* FourSquareEndPoint.swift */,
+				AEB03EA31E2057D5000058F1 /* NetworkProcessing.swift */,
+				AEB03EB81E2AFA1F000058F1 /* LocationManager.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		AEB03EB21E25EEB5000058F1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				AEB03E931E2057B6000058F1 /* ViewController.swift */,
+				AEB03EB31E25EEDC000058F1 /* VenueTableViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		AEB03EB71E26F9B8000058F1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AEB03EB51E26F866000058F1 /* VenueTableViewCell.swift */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,7 +191,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				AEB03E941E2057B6000058F1 /* ViewController.swift in Sources */,
+				AEB03EB01E232149000058F1 /* FourSquareClient.swift in Sources */,
+				AEB03EAA1E205B95000058F1 /* Venue.swift in Sources */,
 				AEB03E921E2057B6000058F1 /* AppDelegate.swift in Sources */,
+				AEB03EAE1E2320FB000058F1 /* APIResult.swift in Sources */,
+				AEB03EB41E25EEDC000058F1 /* VenueTableViewController.swift in Sources */,
+				AEB03EA81E2058DB000058F1 /* Location.swift in Sources */,
+				AEB03EAC1E2208AD000058F1 /* FourSquareEndPoint.swift in Sources */,
+				AEB03EB91E2AFA1F000058F1 /* LocationManager.swift in Sources */,
+				AEB03EA41E2057D5000058F1 /* NetworkProcessing.swift in Sources */,
+				AEB03EA61E205850000058F1 /* Coordinate.swift in Sources */,
+				AEB03EB61E26F866000058F1 /* VenueTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,6 +363,7 @@
 				AEB03EA21E2057B6000058F1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

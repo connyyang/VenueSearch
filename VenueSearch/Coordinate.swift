@@ -7,3 +7,15 @@
 //
 
 import Foundation
+
+struct Coordinate : CustomStringConvertible
+{
+    let latitude : Double
+    
+    let longtitude : Double
+    
+    var description: String {
+        return ("\(latitude),\(longtitude)")
+        
+    }
+}
