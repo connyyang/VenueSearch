@@ -20,6 +20,7 @@ class VenueTableViewController: UITableViewController {
     var venues = [Venue]() {
         didSet{
             self.tableView.reloadData()
+            addVenueAnnotations()
         }
     }
     
@@ -75,6 +76,25 @@ class VenueTableViewController: UITableViewController {
                     
                 }
             })
+        }
+    }
+    
+    func addVenueAnnotations()
+    {
+        if venues.count > 0
+        {
+            let annotations : [MKPointAnnotation] = venues.map{ venue in
+                let pointAnnotation = MKPointAnnotation()
+                if let coordinate = venue.location?.coordinate
+                {
+                    pointAnnotation.coordinate = CLLocationCoordinate2D(latitude: coordinate.latitude, longitude: coordinate.longtitude)
+                    pointAnnotation.title = venue.name
+                    pointAnnotation.subtitle = venue.categoryName
+                }
+                
+                return pointAnnotation
+            }
+            mapView.addAnnotations(annotations)
         }
     }
 
