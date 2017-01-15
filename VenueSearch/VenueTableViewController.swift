@@ -91,6 +91,7 @@ class VenueTableViewController: UITableViewController {
     
     func addVenueAnnotations()
     {
+        self.removeAnnotations()
         if venues.count > 0
         {
             let annotations : [MKPointAnnotation] = venues.map{ venue in
@@ -108,7 +109,16 @@ class VenueTableViewController: UITableViewController {
         }
     }
 
-
+    func removeAnnotations()
+    {
+        if mapView.annotations.count > 0
+        {
+            for annotation in mapView.annotations
+            {
+                mapView.removeAnnotation(annotation)
+            }
+        }
+    }
 }
 
 extension VenueTableViewController
