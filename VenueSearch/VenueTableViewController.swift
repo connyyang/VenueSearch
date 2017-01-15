@@ -36,6 +36,9 @@ class VenueTableViewController: UITableViewController {
             fetchVenues()
         }
     }
+    
+    let searchBarController = UISearchController(searchResultsController: nil)
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,6 +55,13 @@ class VenueTableViewController: UITableViewController {
         }
         
         mapView.delegate = self
+        
+        // Configure Search Bar
+        searchBarController.searchResultsUpdater = self
+        searchBarController.hidesNavigationBarDuringPresentation = true
+        searchBarController.dimsBackgroundDuringPresentation = false
+        definesPresentationContext = true
+        headerStackView.addSubview(searchBarController.searchBar)
 
     }
     
@@ -160,3 +170,20 @@ extension VenueTableViewController : MKMapViewDelegate
         mapView.setRegion(region, animated: true)
     }
 }
+
+extension VenueTableViewController : UISearchResultsUpdating
+{
+    func updateSearchResults(for searchController: UISearchController) {
+        if let coordinate = coordinate {
+            fourSquareClient.fetchVenuesFor(coordinate: coordinate, query: searchBarController.searchBar.text,  completion: { (result) in
+                switch result{
+                case .success(let venues):
+                    self.venues = venues
+                case .failure(let error):
+                    print(error)
+                }
+            })
+        }
+    }
+}
+
